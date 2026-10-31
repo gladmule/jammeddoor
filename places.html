@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JAMMED DOOR</title>
+</head>
+<body>
+
+  <h2>JAMMED DOOR</h2>
+  <p><b>Experi(mental) music listening society.</b></p>
+
+  <hr>
+
+  <h1>PLACES</h1>
+
+  <p>
+    <strong>
+      For now in London and vicinity, but the cities I will add more as the
+      wind blows and as I find them.
+    </strong>
+  </p>
+
+  <p>
+    <label for="place-search">SEARCH</label><br>
+ <input
+  type="search"
+  id="place-search"
+  placeholder="in lowercase"
+  oninput="filterPlaces(this.value)"
+>
+  </p>
+
+  <div id="places-list">
+
+   <article class="place" data-tags="london cafe good-music coffee">
+  <h3>SCOOTER CAFFE</h3>
+
+  <p>WHAT: Cafe</p>
+  <p>WHERE: Waterloo, Central South London</p>
+  <p>WHY: Best cafe, cat, cheap coffee, great music</p>
+  <p>HOW: After walking around Southbank and not finding anywhere to sit</p>
+  <p>MORE: Open 8–11 every day including Sundays, WiFi, armchairs, terrace</p>
+
+  <p>Tags: london, cafe, good music, coffee</p>
+</article>
+
+    <hr>
+
+    <article class="place" data-tags="london record shop experimental music">
+      <h3>PLACE 2</h3>
+      <p>
+	WHAT: <br>
+	WHERE: London<br>
+        WHO: Live experimental, noise, and left-field music.<br>
+   	WHY: their website or email<br>
+	HOW: <br>
+      </p>
+      <p>Tags: london, venue, live music, experimental</p>
+    </article>
+
+<hr>
+
+    <article class="place" data-tags="london venue live-music dive-bar">
+      <h3>ENDEAVOUR</h3>
+      <p>
+	WHAT: Venue / Dive Bar <br>
+        WHERE: Deptford, South London<br>
+   	WHY: Best cafe, cat, cheap coffee, great music<br>
+	HOW: After walking around Southbank and not finding anywhere to sit<br>
+	MORE: open 8-11 every day including. Sundays, WiFi, armchairs, terrace <br>
+      </p>
+      <p>Tags: london, cafe, good music, coffee</p>
+    </article>
+
+<hr>
+
+    <article class="place" data-tags="london venue live music experimental">
+      <h3>ROCK N/ROLL CABARET @ THE RAINCALL BAR</h3>
+      <p>
+	WHEN: Wednesday
+	WHAT: Night / Dive Bar <br>
+        WHERE: Soho, London <br>
+   	WHY: Great night<br>
+	HOW: at 8pm<br>
+	MORE: Don't miss the acts. Not a late night. Place open late <br>
+      </p>
+      <p>Tags: london, night, wednesday, live, cabaret, performance, basement, soho</p>
+    </article>
+   
+
+  </div>
+
+  <p id="no-results" style="display:none;">
+    No places match that search.
+  </p>
+
+  <hr>
+
+  <p>KNOW A PLACE THAT SHOULD BE HERE? GET IN TOUCH!</p>
+
+  <p>
+    <a href="mailto:contact.jammeddoor@gmail.com">
+  contact.jammeddoor@gmail.com
+</a>
+  </p>
+
+  <p>
+    With: place, what they do, contacts, why it should be here, etc.<br>
+    And if it is your venue: even better!
+  </p>
+
+  <p><a href="index.html">Back</a></p>
+
+  <script>
+  function filterPlaces(search) {
+    search = search.toLowerCase().trim();
+
+    var places = document.querySelectorAll("#places-list .place");
+    var visible = 0;
+
+    for (var i = 0; i < places.length; i++) {
+      var place = places[i];
+      var tags = place.getAttribute("data-tags").toLowerCase();
+      var text = place.textContent.toLowerCase();
+
+      var show =
+        search === "" ||
+        tags.indexOf(search) !== -1 ||
+        text.indexOf(search) !== -1;
+
+      if (show) {
+        place.style.display = "";
+        visible++;
+      } else {
+        place.style.display = "none";
+      }
+    }
+
+    var noResults = document.getElementById("no-results");
+
+    if (visible === 0) {
+      noResults.style.display = "";
+    } else {
+      noResults.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
