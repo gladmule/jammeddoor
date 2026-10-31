@@ -37,7 +37,62 @@ All applications are subject to approval... misconduct will lead to removal.
 
   </p>
 
+  <p>
+    <label for="people-search">Search people:</label>
+    <input
+      type="search"
+      id="people-search"
+      placeholder="e.g. london, drummer, filmmaker, dj, philosophy"
+    >
+  </p>
+
+  <div id="people-list">
+
+    <div class="person">
+      <h3>TESTER PERSON X</h3>
+      <p>
+        London, musician, <br>
+        Interests: <br>
+	Notes: <br>
+      </p>
+      <p>Tags: x, y, z</p>
+    </div>
+
+  </div>
+
+  <p id="no-results" style="display: none;">
+    No people match that search.
+  </p>
+
   <p><a href="index.html">Back</a></p>
+
+<script>
+  const searchBox = document.getElementById("people-search");
+  const people = document.querySelectorAll(".person");
+  const noResults = document.getElementById("no-results");
+
+  searchBox.addEventListener("input", function () {
+    const query = searchBox.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    people.forEach(function (person) {
+      const text = person.textContent.toLowerCase();
+
+      if (text.includes(query)) {
+        person.style.display = "";
+        visibleCount++;
+      } else {
+        person.style.display = "none";
+      }
+    });
+
+    if (visibleCount === 0) {
+      noResults.style.display = "";
+    } else {
+      noResults.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
