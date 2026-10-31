@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JAMMED DOOR</title>
+</head>
+<body>
+
+  <h2>JAMMED DOOR</h2>
+  <p><b>Experi(mental) music listening society.</b></p>
+
+  <hr>
+
+  <h1>CLASSIFIEDS</h1>
+
+  <p>
+    <strong>
+      LOOKING FOR SOMETHING? MUSIC? PEOPLE? PROJECTS? IDEAS? A SONG? PLACES? EVENTS? BANDS? PHOTOGRAPHERS? PROMOTERS? SOMETHING ELSE?
+    </strong>
+     <strong>
+      <p> GET IN TOUCH -->
+<br> <a href="mailto:contact.jammeddoor@gmail.com">contact.jameddoor@gmail.com</a>
+    </strong>
+
+  </p>
+ </p>
+<hr>
+
+  <p>
+    <label for="classified-search">Search classifieds:</label>
+    <input
+      type="search"
+      id="classified-search"
+      placeholder="in lowercase"
+    >
+  </p>
+
+  <div id="classified-list"></div>
+
+  <p id="no-results" style="display: none;">
+    NOT YET!
+  </p>
+
+<hr>
+
+ <p><a href="index.html">Back</a></p>
+
+<script>
+  const searchBox = document.getElementById("classified-search");
+  const listings = document.querySelectorAll(".classified");
+  const noResults = document.getElementById("no-results");
+
+  searchBox.addEventListener("input", function () {
+    const query = searchBox.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    listings.forEach(function (listing) {
+      const text = listing.textContent.toLowerCase();
+
+      if (text.includes(query)) {
+        listing.style.display = "";
+        visibleCount++;
+      } else {
+        listing.style.display = "none";
+      }
+    });
+
+    if (visibleCount === 0) {
+      noResults.style.display = "";
+    } else {
+      noResults.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
