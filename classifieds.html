@@ -3,47 +3,66 @@
 <head>
   <meta charset="utf-8">
   <title>JAMMED DOOR</title>
+
+  <style>
+    .newspaper {
+      border: 8px double black;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .box {
+      border: 1px solid black;
+      padding: 10px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+  </style>
+
 </head>
 <body>
 
   <h2>JAMMED DOOR</h2>
   <p><b>Experi(mental) music listening society.</b></p>
 
-  <hr>
-
-  <h1>CLASSIFIEDS</h1>
-
-  <p>
-    <strong>
-      LOOKING FOR SOMETHING? MUSIC? PEOPLE? PROJECTS? IDEAS? A SONG? PLACES? EVENTS? BANDS? PHOTOGRAPHERS? PROMOTERS? SOMETHING ELSE?
-    </strong>
-     <strong>
-      <p> GET IN TOUCH -->
-<br> <a href="mailto:contact.jammeddoor@gmail.com">contact.jameddoor@gmail.com</a>
-    </strong>
-
-  </p>
- </p>
 <hr>
+  <div class="newspaper">
+<center>
+    <h1>✯CLASSIFIEDS✯</h1>
 
-  <p>
-    <label for="classified-search">Search classifieds:</label>
-    <input
-      type="search"
-      id="classified-search"
-      placeholder="in lowercase"
-    >
-  </p>
+    <p>
+      <strong>
+        LOOKING FOR SOMETHING? MUSIC? PEOPLE? PROJECTS? IDEAS? A SONG? PLACES? EVENTS? BANDS? PHOTOGRAPHERS? PROMOTERS? SOMETHING ELSE?
+      </strong>
+    </p>
 
-  <div id="classified-list"></div>
+    <div class="box">
+      <strong>GET IN TOUCH --&gt;</strong><br>
+      <a href="mailto:contact.jammeddoor@gmail.com">contact.jammeddoor@gmail.com</a>
+    </div>
+</center>
+    <hr>
 
-  <p id="no-results" style="display: none;">
-    NOT YET!
-  </p>
+    <p>
+      <label for="classified-search">Search classifieds:</label>
+      <input
+        type="search"
+        id="classified-search"
+        placeholder="in lowercase"
+      >
+    </p>
 
-<hr>
+    <div id="classified-list"></div>
 
- <p><a href="index.html">Back</a></p>
+    <p id="no-results" style="display: none;">
+      NOT YET!
+    </p>
+
+    <hr>
+
+    <p><a href="index.html">Back</a></p>
+
+  </div>
 
 <script>
   const searchBox = document.getElementById("classified-search");
