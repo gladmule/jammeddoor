@@ -1,17 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JAMMED DOOR</title>
 
   <style>
     body {
-      border: 6px double black;
-      padding: 20px;
-      margin: 20px;
+      min-height: calc(100vh - 24px);
+      box-sizing: border-box;
+      padding: 16px;
+      margin: 12px;
+      background-color: #d6aa63;
+      background-image: url("manwithdice.png");
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: black;
+    }
+
+    h1 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: clamp(42px, 9vh, 72px);
+      font-weight: normal;
+      line-height: 1;
+      margin: 0 0 10px;
+      -webkit-text-stroke: 2px white;
+      paint-order: stroke fill;
+    }
+
+   b {
+  display: inline-block;
+  font-size: 19px;
+  color: black;
+  background-color: white;
+  padding: 4px 9px;
+}
+
+    p {
+      margin: 7px 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 4px 9px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      background-color: black;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    @media (max-height: 650px) {
+      body {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 44px;
+        margin-bottom: 8px;
+      }
+
+      b {
+        font-size: 17px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+
+      a {
+        font-size: 16px;
+        padding: 3px 8px;
+      }
     }
   </style>
 
@@ -28,25 +98,26 @@
     ]
   }
   </script>
-
 </head>
-<body>
 
+<body>
   <h1>JAMMED DOOR</h1>
   <b>Experi(mental) music society.</b>
 
   <p><a href="what.html">What?</a></p>
   <p><a href="who.html">Who?</a></p>
-  <p><a href="request.html"> Request a playlist</a></p>
+  <p><a href="request.html">Request a playlist</a></p>
   <p><a href="submit.html">Submit a track</a></p>
   <p><a href="search.html">Search</a></p>
   <p><a href="pastplaylists.html">Playlists</a></p>
   <p><a href="plans.html">Plans</a></p>
-  <p><a href="people.html">People</a></p>
+ <!-- <p><a href="people.html">People</a></p>
   <p><a href="places.html">Places</a></p>
-  <p><a href="misc.html">Misc.</a></p>
+  <p><a href="misc.html">Misc.</a></p> -->
   <p><a href="blog.html">BLOG</a></p>
   <p><a href="classifieds.html">CLASSIFIEDS</a></p>
-
+<br>
+<br>
+<p><a href="https://www.instagram.com/jammeddoor">FOLLOW US ON INSTAGRAM:  @jammeddoor</a></p>
 </body>
 </html>
