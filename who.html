@@ -7,6 +7,10 @@
   <link rel="icon" type="image/png" href="jamjar.png">
 
   <style>
+    body {
+      font-size: 16px;
+    }
+
     header {
       display: flex;
       align-items: center;
@@ -15,10 +19,23 @@
       margin-bottom: 16px;
     }
 
-    header img {
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .header-brand img {
       display: block;
       width: 70px;
       height: auto;
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      min-width: 0;
     }
 
     h1,
@@ -36,11 +53,6 @@
       margin: 0 0 6px;
     }
 
-    header h2 a {
-      color: black;
-      text-decoration: none;
-    }
-
     header nav {
       margin-left: auto;
       display: flex;
@@ -55,10 +67,6 @@
     }
 
     @media (max-width: 600px) {
-      body {
-        font-size: 20px;
-      }
-
       h1 {
         font-size: 34px;
       }
@@ -66,19 +74,24 @@
       header h2 {
         font-size: 28px;
       }
+
+      header nav {
+        width: 100%;
+        margin-left: 0;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <a href="index.html">
-      <img src="jamjar.png" alt="Jammed Door homepage">
-    </a>
+    <div class="header-brand">
+      <img src="jamjar.png" alt="Jammed Door">
 
-    <div>
-      <h2><a href="index.html">JAMMED DOOR</a></h2>
-      <b>Experi(mental) music listening society.</b>
+      <div class="header-text">
+        <h2>JAMMED DOOR</h2>
+        <b>Experi(mental) music listening society.</b>
+      </div>
     </div>
 
     <nav aria-label="Main menu">
@@ -86,7 +99,7 @@
       <a href="submit.html">SUBMIT</a>
       <a href="request.html">REQUEST</a>
       <a href="what.html">WHAT</a>
-      <a href="who.html">WHO</a>
+      <a href="who.html" aria-current="page">WHO</a>
       <a href="blog.html">BLOG</a>
     </nav>
   </header>
@@ -101,64 +114,68 @@
 
   <hr>
 
-  <h1>WHO IS JAMMED DOOR?</h1>
+  <main>
+    <h1>WHO IS JAMMED DOOR?</h1>
 
-  <hr>
+    <hr>
 
-  <p>
-    Jammed door is run by me. I like reading 'about me' pages because they always teeter on the brink of awkwardly serious 3rd person professional or an abrupt few lines that leave you with more questions than you thought you had. Which is a good ay to go in my opinion. It's difficult to say who you are... really. I'm really not entirely sure what to write here. It's a little self indulgent... but it sees like nobody is holding a reader captive here so here it is:
-  </p>
+    <div id="page-text">
+      <p>
+        Jammed door is run by me. I like reading 'about me' pages because they always teeter on the brink of awkwardly serious 3rd person professional or an abrupt few lines that leave you with more questions than you thought you had. Which is a good ay to go in my opinion. It's difficult to say who you are... really. I'm really not entirely sure what to write here. It's a little self indulgent... but it sees like nobody is holding a reader captive here so here it is:
+      </p>
 
-  <p>
-    I guess I'm currently existing somewhere between film, music and philosophy. But we always exist somewhere between life and death, that doesn't say much. I'm doing some documentary film, doing some fiction film, playing a bit of music, making some music, writing a bit.
-  </p>
+      <p>
+        I guess I'm currently existing somewhere between film, music and philosophy. But we always exist somewhere between life and death, that doesn't say much. I'm doing some documentary film, doing some fiction film, playing a bit of music, making some music, writing a bit.
+      </p>
 
-  <p>
-    I am interested in creating a space primarily as a concentration of the ideas that I have toyed with for the past years. I'm interested in stuff I haven't seen or heard yet so I couldn't tell you. Then again there are some things I know that interest me, but the question arises whether they are just familiar or if I really really find them interesting. There's the question of wether familiarity is necessary for depth or if it only jades your perception. I like weird jazz.. but not too jazzy... and not too cerebral. I like people calling many things jazz as a half-joke. I've always really liked the term fake jazz. It suggests the existence of real jazz, and positions whatever fake jazz is as definitely not the real thing. Fake jazz sounds like the biggest scam, but also somehow very very enticing. Sounds like there's jazz intent but lack of proper execution. Or is it the other way around? Where is fake classical? Why is fake jazz somehow so inviting? Fake rock only exists in the movies.
-  </p>
+      <p>
+        I am interested in creating a space primarily as a concentration of the ideas that I have toyed with for the past years. I'm interested in stuff I haven't seen or heard yet so I couldn't tell you. Then again there are some things I know that interest me, but the question arises whether they are just familiar or if I really really find them interesting. There's the question of wether familiarity is necessary for depth or if it only jades your perception. I like weird jazz.. but not too jazzy... and not too cerebral. I like people calling many things jazz as a half-joke. I've always really liked the term fake jazz. It suggests the existence of real jazz, and positions whatever fake jazz is as definitely not the real thing. Fake jazz sounds like the biggest scam, but also somehow very very enticing. Sounds like there's jazz intent but lack of proper execution. Or is it the other way around? Where is fake classical? Why is fake jazz somehow so inviting? Fake rock only exists in the movies.
+      </p>
 
-  <p>
-    I'm interested in improv music, an interest that is fading slowly from the disillusionment of the homogeneity of noise. But that is another topic. I co-founded the fake and very much failed punk movement of ultra-punk. Played in Band from Earth and probably 150 other bands like it. Band from earth was good for a time, while it was still fresh and before it started to decompose into compost.
-  </p>
+      <p>
+        I'm interested in improv music, an interest that is fading slowly from the disillusionment of the homogeneity of noise. But that is another topic. I co-founded the fake and very much failed punk movement of ultra-punk. Played in Band from Earth and probably 150 other bands like it. Band from earth was good for a time, while it was still fresh and before it started to decompose into compost.
+      </p>
 
-  <p>
-    Making a website feels like what I imagine buying a house is like. I guess it's the same thing... buying a bit of the internet to yourself. You don't get this feeling on platforms. On the border of public and private, you put up garish sculptures in your garden.
-  </p>
+      <p>
+        Making a website feels like what I imagine buying a house is like. I guess it's the same thing... buying a bit of the internet to yourself. You don't get this feeling on platforms. On the border of public and private, you put up garish sculptures in your garden.
+      </p>
 
-  <p>
-    I'm a filmmaker. I like whacky films. Not all whacky films. I can't quite place what makes a bad film good. I can say what makes a good film bad much easier. I like making music videos but I'd hate to become the one making videos of musicians, there's something degrading about doing what a band wants. Unless you really make whacky videos. But then you've gotta like the music... or really hate it. Both of which are rare.
-    <br>
-    ... this is my way of saying if you or a friend are looking for someone to make a music video, get in touch. The best thing about it is I'm not responsible for the music.
-  </p>
+      <p>
+        I'm a filmmaker. I like whacky films. Not all whacky films. I can't quite place what makes a bad film good. I can say what makes a good film bad much easier. I like making music videos but I'd hate to become the one making videos of musicians, there's something degrading about doing what a band wants. Unless you really make whacky videos. But then you've gotta like the music... or really hate it. Both of which are rare.
+        <br>
+        ... this is my way of saying if you or a friend are looking for someone to make a music video, get in touch. The best thing about it is I'm not responsible for the music.
+      </p>
 
-  <p>
-    I'm making some docs, got a film on the go, an experimental project, the whole smorgasbord... the film/whacky production stuff is on <a href="https://pazzoprod.com">PAZZOPROD.COM</a>.
-  </p>
+      <p>
+        I'm making some docs, got a film on the go, an experimental project, the whole smorgasbord... the film/whacky production stuff is on <a href="https://pazzoprod.com">PAZZOPROD.COM</a>.
+      </p>
 
-  <p>
-    I'm frustrated with many things often... Or I'm frustrated often by many things. I like clarity. I get annoyed by aesthetic desperation. I don't mean here about the situational desperate feeling when making. I mean a desperate desire to create something 'aesthetically pleasing'. I have some annoying views, especially about films that I also question the origin of. I'm against manipulative background music in movies. I find it funny. Same applies to music. I don't want to be told what to feel. I want to be handed a platter of different flavours. You can warn me about the spicy pepper that looks like a gherkin but don't fish it out and throw it. Chuck the savoury with the sweet. The song should be a platter, it's not that far from cooking. Although I can't say I like cooking.
-  </p>
+      <p>
+        I'm frustrated with many things often... Or I'm frustrated often by many things. I like clarity. I get annoyed by aesthetic desperation. I don't mean here about the situational desperate feeling when making. I mean a desperate desire to create something 'aesthetically pleasing'. I have some annoying views, especially about films that I also question the origin of. I'm against manipulative background music in movies. I find it funny. Same applies to music. I don't want to be told what to feel. I want to be handed a platter of different flavours. You can warn me about the spicy pepper that looks like a gherkin but don't fish it out and throw it. Chuck the savoury with the sweet. The song should be a platter, it's not that far from cooking. Although I can't say I like cooking.
+      </p>
 
-  <p>
-    I'm not sure anyone will actually read this, but if you have, thank you.
-  </p>
+      <p>
+        I'm not sure anyone will actually read this, but if you have, thank you.
+      </p>
+    </div>
+  </main>
 
   <hr>
 
   <p><a href="index.html">Back</a></p>
 
   <script>
+    const pageText = document.getElementById("page-text");
     const baseTextSize = parseFloat(
-      getComputedStyle(document.body).fontSize
+      getComputedStyle(pageText).fontSize
     );
 
     let textSize = 100;
 
     function changeTextSize(change) {
-      textSize = textSize + (change * 10);
-      textSize = Math.max(80, Math.min(160, textSize));
+      textSize = Math.max(80, Math.min(160, textSize + change * 10));
 
-      document.body.style.fontSize =
+      pageText.style.fontSize =
         (baseTextSize * textSize / 100) + "px";
     }
   </script>
