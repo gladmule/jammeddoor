@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JAMMED DOOR</title>
+  <link rel="icon" type="image/png" href="jamjar.png">
 
   <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
     .newspaper {
       border: 8px double black;
       padding: 25px;
       margin: 20px 0;
+    }
+
+    .classified-heading {
+      text-align: center;
     }
 
     .box {
@@ -17,30 +66,54 @@
       margin-bottom: 15px;
       display: inline-block;
     }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 28px;
+      }
+    }
   </style>
-
 </head>
+
 <body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
 
-  <h2>JAMMED DOOR</h2>
-  <p><b>Experi(mental) music listening society.</b></p>
-
-<hr>
-  <div class="newspaper">
-<center>
-    <h1>✯CLASSIFIEDS✯</h1>
-
-    <p>
-      <strong>
-        LOOKING FOR SOMETHING? MUSIC? PEOPLE? PROJECTS? IDEAS? A SONG? PLACES? EVENTS? BANDS? PHOTOGRAPHERS? PROMOTERS? SOMETHING ELSE?
-      </strong>
-    </p>
-
-    <div class="box">
-      <strong>GET IN TOUCH --&gt;</strong><br>
-      <a href="mailto:thejammeddoor@gmail.com">thejammeddoor@gmail.com</a>
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
     </div>
-</center>
+
+    <nav aria-label="Main menu">
+      <a href="pastplaylists.html">PLAYLISTS</a>
+      <a href="submit.html">SUBMIT</a>
+      <a href="request.html">REQUEST</a>
+      <a href="what.html">WHAT</a>
+      <a href="who.html">WHO</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
+
+  <hr>
+
+  <div class="newspaper">
+    <div class="classified-heading">
+      <h1>✯CLASSIFIEDS✯</h1>
+
+      <p>
+        <strong>
+          LOOKING FOR SOMETHING? MUSIC? PEOPLE? PROJECTS? IDEAS? A SONG? PLACES? EVENTS? BANDS? PHOTOGRAPHERS? PROMOTERS? SOMETHING ELSE?
+        </strong>
+      </p>
+
+      <div class="box">
+        <strong>GET IN TOUCH --&gt;</strong><br>
+        <a href="mailto:thejammeddoor@gmail.com">thejammeddoor@gmail.com</a>
+      </div>
+    </div>
+
     <hr>
 
     <p>
@@ -61,36 +134,34 @@
     <hr>
 
     <p><a href="index.html">Back</a></p>
-
   </div>
 
-<script>
-  const searchBox = document.getElementById("classified-search");
-  const listings = document.querySelectorAll(".classified");
-  const noResults = document.getElementById("no-results");
+  <script>
+    const searchBox = document.getElementById("classified-search");
+    const listings = document.querySelectorAll(".classified");
+    const noResults = document.getElementById("no-results");
 
-  searchBox.addEventListener("input", function () {
-    const query = searchBox.value.toLowerCase().trim();
-    let visibleCount = 0;
+    searchBox.addEventListener("input", function () {
+      const query = searchBox.value.toLowerCase().trim();
+      let visibleCount = 0;
 
-    listings.forEach(function (listing) {
-      const text = listing.textContent.toLowerCase();
+      listings.forEach(function (listing) {
+        const text = listing.textContent.toLowerCase();
 
-      if (text.includes(query)) {
-        listing.style.display = "";
-        visibleCount++;
+        if (text.includes(query)) {
+          listing.style.display = "";
+          visibleCount++;
+        } else {
+          listing.style.display = "none";
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.style.display = "";
       } else {
-        listing.style.display = "none";
+        noResults.style.display = "none";
       }
     });
-
-    if (visibleCount === 0) {
-      noResults.style.display = "";
-    } else {
-      noResults.style.display = "none";
-    }
-  });
-</script>
-
+  </script>
 </body>
 </html>
