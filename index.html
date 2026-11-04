@@ -21,6 +21,20 @@
       color: black;
     }
 
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
     h1 {
       font-family: Impact, "Arial Narrow", sans-serif;
       font-size: clamp(42px, 9vh, 72px);
@@ -102,8 +116,14 @@
 </head>
 
 <body>
-  <h1>JAMMED DOOR</h1>
-  <b>Experi(mental) music society.</b>
+  <header>
+    <img src="jamjar.png" alt="Jammed Door">
+
+    <div>
+      <h1>JAMMED DOOR</h1>
+      <b>Experi(mental) music society.</b>
+    </div>
+  </header>
 
   <p><a href="what.html">What?</a></p>
   <p><a href="who.html">Who?</a></p>
