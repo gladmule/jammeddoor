@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>JAMMED DOOR</title>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
     .box {
       border: 1px solid black;
       padding: 10px;
@@ -13,7 +59,8 @@
 
     .circle {
       width: 500px;
-      height: 500px;
+      max-width: 100%;
+      min-height: 500px;
       border: 6px double black;
       border-radius: 50%;
       display: flex;
@@ -25,37 +72,63 @@
       margin: 20px auto;
       box-sizing: border-box;
     }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 28px;
+      }
+
+      .circle {
+        min-height: 400px;
+        padding: 30px;
+      }
+    }
   </style>
-
 </head>
+
 <body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
 
-  <h2>JAMMED DOOR</h2>
-  <b>Experi(mental) music listening society.</b>
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
+    </div>
 
-<hr>
+    <nav aria-label="Main menu">
+      <a href="pastplaylists.html">PLAYLISTS</a>
+      <a href="submit.html">SUBMIT</a>
+      <a href="request.html">REQUEST</a>
+      <a href="what.html">WHAT</a>
+      <a href="who.html">WHO</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
 
+  <hr>
 
-<div class="circle">
-/// --->>> ///
-  <h1> SUBMIT A TRACK HERE!</h1>
+  <div class="circle">
+    /// ---&gt;&gt;&gt; ///
 
-  <p>
-    If you want to submit a track, playlist, or something else, get in touch.
-  </p>
+    <h1>SUBMIT A TRACK HERE!</h1>
 
-  <div class="box">
-    <a href="mailto:thejammeddoor@gmail.com"><em>GET IN TOUCH HERE</em></a>
+    <p>
+      If you want to submit a track, playlist, or something else, get in touch.
+    </p>
+
+    <div class="box">
+      <a href="mailto:thejammeddoor@gmail.com">
+        <em>GET IN TOUCH HERE</em>
+      </a>
+    </div>
+
+    <div>
+      (thejammeddoor@gmail.com)
+    </div>
+
+    <p><a href="index.html">Back</a></p>
   </div>
-
-  <div align="right">
- 
-(thejammeddoor@gmail.com)
-  </div>
-
-  <p><a href="index.html">Back</a></p>
-
-</div>
-
 </body>
 </html>

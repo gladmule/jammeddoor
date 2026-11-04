@@ -1,40 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JAMMED DOOR</title>
 
   <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
     mark {
       background: yellow;
       color: black;
     }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
-<body>
 
-  <h1>JAMMED DOOR</h1>
-  <p><b>Experi(mental) music listening society.</b></p>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
+
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
+    </div>
+
+    <nav aria-label="Main menu">
+      <a href="pastplaylists.html">PLAYLISTS</a>
+      <a href="submit.html">SUBMIT</a>
+      <a href="request.html">REQUEST</a>
+      <a href="what.html">WHAT</a>
+      <a href="who.html">WHO</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
 
   <hr>
 
-  <h2>PAST PLAYLISTS</h2>
-
-  <p>
-    <a href="index.html">Home</a> |
-    <a href="what.html">What?</a> |
-    <a href="submit.html">Submit</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="request.html">Request a playlist</a> |
-    <a href="F.A.Q.s.html">F.A.Q.s</a>
-  </p>
-
+  <h1>PAST PLAYLISTS</h1>
+<hr>
   <p>
     <label for="tag-search">SEARCH</label><br>
     <input type="search" id="tag-search" placeholder="in lowercase">
   </p>
-
-  <hr>
 
   <div id="playlist-list">
 
@@ -88,7 +148,7 @@ Silver Apples // Whirly-Bird // 1968-00:02:37
     <article class="playlist" id="born" data-tags="born rock punk soul jazz pop">
       <h3>BORN IN A WAY</h3>
       <p>
-        Song of predetermination and the debate of nature vs nurture. <br>
+        Song of predetermination and the debate of nature vs nurture.<br>
         Tags: born, rock, punk, soul, jazz, pop, rockabilly
       </p>
 
@@ -132,7 +192,7 @@ KISS // I Was Made For Lovin' You // 1979-00:04:31
     <article class="playlist" id="untitled-playlist" data-tags="post-punk noise experimental punk art-rock">
       <h3>SMELLS LIKE FATE</h3>
       <p>
-        Post-punk, doing the thing that you'd do wether it's right or wrong. <br>
+        Post-punk, doing the thing that you'd do wether it's right or wrong.<br>
         Tags: post-punk, noise, experimental, punk, pop, clunky
       </p>
 
@@ -245,7 +305,7 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
 
   </div>
 
-  <p id="no-results" style="display:none;">No playlists match that tag.</p>
+  <p id="no-results" style="display: none;">No playlists match that tag.</p>
 
   <p><a href="index.html">Back</a></p>
 
@@ -296,6 +356,7 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
     const noResults = document.getElementById("no-results");
 
     const originalHTML = new Map();
+
     playlists.forEach(playlist => {
       originalHTML.set(playlist, playlist.innerHTML);
     });
@@ -309,7 +370,10 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
 
       if (words.length === 0) return;
 
-      const pattern = new RegExp(`(${words.map(escapeRegExp).join("|")})`, "gi");
+      const pattern = new RegExp(
+        `(${words.map(escapeRegExp).join("|")})`,
+        "gi"
+      );
 
       const walker = document.createTreeWalker(
         playlist,
@@ -317,9 +381,11 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
         {
           acceptNode: node => {
             const parent = node.parentNode.nodeName;
+
             if (parent === "SCRIPT" || parent === "STYLE") {
               return NodeFilter.FILTER_REJECT;
             }
+
             return NodeFilter.FILTER_ACCEPT;
           }
         }
@@ -333,13 +399,32 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
       }
 
       textNodes.forEach(node => {
+        pattern.lastIndex = 0;
+
         if (!pattern.test(node.nodeValue)) return;
+
         pattern.lastIndex = 0;
 
         const replacement = document.createElement("span");
-        replacement.innerHTML = node.nodeValue.replace(
-          pattern,
-          "<mark>$1</mark>"
+        let lastIndex = 0;
+        let match;
+
+        while ((match = pattern.exec(node.nodeValue)) !== null) {
+          replacement.appendChild(
+            document.createTextNode(
+              node.nodeValue.slice(lastIndex, match.index)
+            )
+          );
+
+          const mark = document.createElement("mark");
+          mark.textContent = match[0];
+          replacement.appendChild(mark);
+
+          lastIndex = pattern.lastIndex;
+        }
+
+        replacement.appendChild(
+          document.createTextNode(node.nodeValue.slice(lastIndex))
         );
 
         node.parentNode.replaceChild(replacement, node);
@@ -348,9 +433,8 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
 
     searchBox.addEventListener("input", () => {
       const search = searchBox.value.toLowerCase().trim();
-      let visible = 0;
-
       const words = search.split(/\s+/).filter(Boolean);
+      let visible = 0;
 
       playlists.forEach(playlist => {
         const tags = playlist.dataset.tags.toLowerCase();
@@ -362,6 +446,12 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
 
         playlist.style.display = show ? "" : "none";
 
+        const divider = playlist.nextElementSibling;
+
+        if (divider && divider.tagName === "HR") {
+          divider.style.display = show ? "" : "none";
+        }
+
         if (show) {
           highlightMatches(playlist, words);
           visible++;
@@ -371,6 +461,5 @@ Incredible Bongo Band - Bongo Rock - 2014-00:02:39
       noResults.style.display = visible ? "none" : "";
     });
   </script>
-
 </body>
 </html>

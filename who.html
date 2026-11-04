@@ -1,9 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>JAMMED DOOR</title>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
     @media (max-width: 600px) {
       body {
         font-size: 20px;
@@ -13,23 +63,37 @@
         font-size: 34px;
       }
 
-      h2 {
+      header h2 {
         font-size: 28px;
       }
     }
   </style>
-
 </head>
-<body>
 
-  <h2>JAMMED DOOR</h2>
-  <b>Experi(mental) music listening society.</b>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
+
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
+    </div>
+
+    <nav aria-label="Main menu">
+      <a href="pastplaylists.html">PLAYLISTS</a>
+      <a href="submit.html">SUBMIT</a>
+      <a href="request.html">REQUEST</a>
+      <a href="what.html">WHAT</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
 
   <hr>
 
   <p>
     <b>TEXT SIZE:</b>
-
     <button type="button" onclick="changeTextSize(-1)">A-</button>
     <button type="button" onclick="changeTextSize(1)">A+</button>
   </p>
@@ -81,22 +145,19 @@
   <p><a href="index.html">Back</a></p>
 
   <script>
+    const baseTextSize = parseFloat(
+      getComputedStyle(document.body).fontSize
+    );
+
     let textSize = 100;
 
     function changeTextSize(change) {
       textSize = textSize + (change * 10);
+      textSize = Math.max(80, Math.min(160, textSize));
 
-      if (textSize < 80) {
-        textSize = 80;
-      }
-
-      if (textSize > 160) {
-        textSize = 160;
-      }
-
-      document.body.style.fontSize = textSize + "%";
+      document.body.style.fontSize =
+        (baseTextSize * textSize / 100) + "px";
     }
   </script>
-
 </body>
 </html>
