@@ -1,35 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JAMMED DOOR</title>
-</head>
-<body>
 
-  <h2>JAMMED DOOR</h2>
-  <p><b>Experi(mental) music listening society.</b></p>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
+
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
+    </div>
+
+    <nav aria-label="Blog navigation">
+      <a href="blog.html">BACK TO BLOG</a>
+    </nav>
+  </header>
+
+  <hr>
 
   <p>
     <b>TEXT SIZE:</b>
-
     <button type="button" onclick="changeTextSize(-1)">A-</button>
     <button type="button" onclick="changeTextSize(1)">A+</button>
   </p>
 
   <hr>
 
-  <h1>THE BANANAMAN OF NOISE: PART 1 </h1>
+  <h1>THE BANANAMAN OF NOISE: PART 1</h1>
+
+  <h3>PUMPKINIFICATION : PART 2 , THE CONTEXT</h3>
 
   <p>
-    <h3>PUMPKINIFICATION : PART 2 , THE CONTEXT </h3>
+    <strong>If noise is a banana, industrial music is a fruit platter.</strong>
   </p>
 
   <p>
-    <strong> If noise is a banana, industrial music is a fruit platter. </strong>
-  </p>
-
-  <p>
-    This is what happens with noise. 
+    This is what happens with noise.
     This is the same process as noise music that we can see on the street as you're walking through soho on halloween. The noise is contextualised by the presence of other, more obvious noise.
   </p>
 
@@ -92,7 +156,7 @@
   </p>
 
   <p>
-    <strong> BUT I think lets stick to the BANANAMANSOUNDS for now. </strong>
+    <strong>BUT I think lets stick to the BANANAMANSOUNDS for now.</strong>
     <br>
     So let's recap. I primarily need to make sure I haven't gone way off track of what I'm trying to say here...
   </p>
@@ -112,7 +176,7 @@
   </p>
 
   <p>
-    <u>If noise is a banana, industrial music is a fruit platter. </u>
+    <u>If noise is a banana, industrial music is a fruit platter.</u>
   </p>
 
   <p>
@@ -125,9 +189,7 @@
     This still needs work but this is what I'm thinking about today.
   </p>
 
-  <p>
-    glad_mule
-  </p>
+  <p>glad_mule</p>
 
   <hr>
 
@@ -150,6 +212,5 @@
       document.body.style.fontSize = textSize + "%";
     }
   </script>
-
 </body>
 </html>

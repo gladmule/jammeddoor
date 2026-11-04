@@ -1,34 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JAMMED DOOR</title>
-</head>
-<body>
 
-  <h2>JAMMED DOOR</h2>
-  <p><b>Experi(mental) music listening society.</b></p>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    header img {
+      display: block;
+      width: 70px;
+      height: auto;
+    }
+
+    h1,
+    h2 {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    header h2 {
+      font-size: 36px;
+      margin: 0 0 6px;
+    }
+
+    header h2 a {
+      color: black;
+      text-decoration: none;
+    }
+
+    header nav {
+      margin-left: auto;
+    }
+
+    header nav a {
+      font-family: Impact, "Arial Narrow", sans-serif;
+      font-size: 20px;
+      color: black;
+    }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="jamjar.png" alt="Jammed Door homepage">
+    </a>
+
+    <div>
+      <h2><a href="index.html">JAMMED DOOR</a></h2>
+      <b>Experi(mental) music listening society.</b>
+    </div>
+
+    <nav aria-label="Blog navigation">
+      <a href="blog.html">BACK TO BLOG</a>
+    </nav>
+  </header>
+
+  <hr>
 
   <p>
     <b>TEXT SIZE:</b>
-
     <button type="button" onclick="changeTextSize(-1)">A-</button>
     <button type="button" onclick="changeTextSize(1)">A+</button>
   </p>
 
   <hr>
 
-  <h1>THE GOURDIFICATION OF GOTH </h1>
+  <h1>THE GOURDIFICATION OF GOTH</h1>
+
 
   <p>
-    <strong>
-      For now in London and vicinity, but the cities I will add more as the
-      wind blows and as I find them.
-    </strong>
-  </p>
-
-  <p>
-    Especially around Halloween does it dawn on you just to what extent you are repelled by many things. None of it feels cool. It feels just like a gourd, a pumpkin, baked. Sure smells nice but the smell lingers in your flat and you feel just a little nauseous as it smoothly dissolves in your mouth. 
+    Especially around Halloween does it dawn on you just to what extent you are repelled by many things. None of it feels cool. It feels just like a gourd, a pumpkin, baked. Sure smells nice but the smell lingers in your flat and you feel just a little nauseous as it smoothly dissolves in your mouth.
     It's soft, it's hypoallergenic, it's good for you, your child, your toothless dog.
   </p>
 
@@ -92,7 +152,7 @@
     You shit them out and watch them float downstream until they disappear from view. You just have a brief, fleeting reminiscing thought every time it rains.
   </p>
 
-glad_mule
+  <p>glad_mule</p>
 
   <hr>
 
@@ -115,6 +175,5 @@ glad_mule
       document.body.style.fontSize = textSize + "%";
     }
   </script>
-
 </body>
 </html>
